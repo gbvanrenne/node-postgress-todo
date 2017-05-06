@@ -1,0 +1,6 @@
+{
+  "name": "Node + PostgreSQL",
+  "description": "Sample application using Node & PostgreSQL",
+  "repository": "https://github.com/gbvanrenne/node-postgress-todo",
+  "addons": []
+}

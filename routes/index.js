@@ -8,15 +8,15 @@ const pool = require('../lib/pgdb');
 /************************************
   GET home page
 *************************************/
-  router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+router.get('/', function(req, res, next) {
+  res.render('index', { title: 'George' });
 });
+
 
 /************************************
   CREATE API 
 *************************************/
-router.post('/api/v1/todos', (req, res, next) => {
-  const results = [];
+router.post('/api/create', (req, res, next) => {
 
   // Grab data from http request
   const data = {text: req.body.text, complete: false};
@@ -34,12 +34,8 @@ router.post('/api/v1/todos', (req, res, next) => {
   };
 
   // SQL Query > Select Data
-  pool.query('SELECT * FROM $1 ORDER BY id ASC', ['items']), function(err, res) {
-    if (err) {
-      console.log(err);
-      return res.status(500).json({success: false, data: err});
-    }
-    return res.json(res.rows[]);
+  pool.query('SELECT * FROM items ORDER BY id ASC', ""), function(err, res) {
+    return res.json(res.rows);
   };
 });
 

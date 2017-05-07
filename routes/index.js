@@ -16,7 +16,7 @@ router.get('/', function(req, res, next) {
 /************************************
   CREATE API 
 *************************************/
-router.post('/api/create', (req, res, next) => {
+router.post('/', (req, res, next) => {
 
   // Grab data from http request
   const data = {text: req.body.text, complete: false};

@@ -8,5 +8,15 @@ pool.query('CREATE TABLE items(id SERIAL PRIMARY KEY, text VARCHAR(40) not null,
     return console.error('Items table already exists');
   }
 
-  console.log("Done: ", res.rows[0]);
+  console.log("Done: ", res);
+});
+
+
+pool.query('SELECT * FROM items', "", function(err, res) {
+  if(err) {
+    return console.error(err);
+  }
+  else {
+    console.log("Done: ", res);
+  }
 });

@@ -36,21 +36,11 @@ router.post('/api/v1/todos', (req, res, next) => {
   // SQL Query > Select Data
   pool.query('SELECT * FROM $1 ORDER BY id ASC', ['items']), function(err, res) {
     if (err) {
-      done();
       console.log(err);
       return res.status(500).json({success: false, data: err});
     }
+    return res.json(res.rows[]);
   };
-
-  // Stream results back one row at a time
-  pool.on('row', (row) => {
-    results.push(row);
-  });
-  // After all data is returned, close connection and return results
-  pool.on('end', () => {
-    done();
-    return res.json(results);
-  });
 });
 
 module.exports = router;

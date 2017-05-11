@@ -1,8 +1,31 @@
+* {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  padding: 25px;
+  /* font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; */
+  font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00B7FF;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 10px;
+
+}
+
+.container {
+  max-width: 400px;
+  background-color: #eeeeee;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.header {
+  text-align: center;
 }

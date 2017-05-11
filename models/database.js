@@ -7,8 +7,9 @@ pool.query('CREATE TABLE items(id SERIAL PRIMARY KEY, text VARCHAR(40) not null,
   if(err.code = '42P07') {
     return console.error('Items table already exists');
   }
-
-  console.log("Done: ", res);
+  else {
+    console.log(res);
+  }
 });
 
 
@@ -17,6 +18,6 @@ pool.query('SELECT * FROM items', "", function(err, res) {
     return console.error(err);
   }
   else {
-    console.log("Done: ", res);
+    console.log(res);
   }
 });
